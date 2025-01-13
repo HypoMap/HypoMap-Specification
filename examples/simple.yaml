@@ -1,0 +1,56 @@
+hypomap: 0.1.0
+info:
+  title: Карта гипотез
+  summary: Описание простой топологии
+  description: Описание простой топологии
+  contact: 
+    name: Alexey V. Naymushin
+    url: http://otken.ru
+    email: a@otken.ru
+  version: 1.0.0
+map:
+  goals:
+    goal1:
+      title: "<Описание цели>"
+      balance: "... (метрики, которые не дадут сделать хуже, чем сейчас)"
+  metrics:
+    metric1:
+      title: Метрика номер 1
+      now: 10 штук
+      target: 100 штук, рост в 10 раз
+      ref: 
+        - goal1
+    metric2:
+      title: Метрика номер 2
+      now: 10 клиентов
+      target: 20 клиентов, рост в 2 раза
+      ref: 
+        - goal1
+  subjects:
+    subject1:
+      title: "<Описание субъекта 1>"
+      ref:
+        - metric1
+  impacts:
+    impact1:
+      type: Боль
+      title: "... (мотивация субъекта, которая важна для составления гипотез)"
+      ref:
+          - subject1
+    impact2:
+      type: Желание
+      title: "... (мотивация субъекта, которая важна для составления гипотез)"
+      ref: 
+          - subject1
+  hypotheses:
+    hypothesis1:
+      title: "Если <воздействие, приводящее к изменению поведения субъекта>, то <изменение поведения субъекта [и изменение метрик metric1 и metric2 таким-то образом]>, потому что <идея, описывающая, почему воздействие должно изменить поведение субъекта [и повлиять на метрики]>"
+      ref:
+        - impact1
+        - impact2
+  tasks:
+    task1:
+      title: Описание задачи
+      ref:
+        - hypothesis1
+  
